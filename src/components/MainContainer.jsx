@@ -3,21 +3,22 @@ import VideoBackground from './VideoBackground'
 import useMoviesDataFetch from "../hooks/useNowPlayingMovies"
 
 const MainContainer = () => {
-const movies = useMoviesDataFetch()
-if(!movies) return 
-// console.log(movies)
+const [{movieList}] = useMoviesDataFetch()
+if(!movieList) return;
 
-const random = Math.floor(Math.random()*movies.length) 
-// console.log(random)
+const random = Math.floor(Math.random()*movieList[0]?.results?.length)
 
-const data =movies[random]
+
+
+const data =movieList[1]?.results[random]
 const{title,overview,id}=data
 
 
   return (
-    <div className='w-[100%]'>
+    <div className='-mt-14 w-screen h-screen bg-black'>
     <VideoTitle  title={title} overview={overview} id={id}/>
-    <VideoBackground id={id} />
+    <VideoBackground id={id}/>
+    
     </div>
   )
 }

@@ -1,19 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import MainContainer from "./MainContainer"
 import SecondaryConatiner from "./SecondaryConatiner"
+import GptSearch from './GptSearch'
+import { useSelector } from 'react-redux'
+
+
 
 
 const Browse = () => {
+  const accessGpt = useSelector((state)=>state.gpt.showGptSearch)
+
 
 
 return (
-    <div className='relative w-[100%] h-[100%] p-0 m-0 box-border'>
+    <div className='w-screen h-[100%] p-0 m-0 box-border bg-black'>
+     
       <Header/>
-      <MainContainer/>
-      <SecondaryConatiner/>
-      
-    </div>
+      {accessGpt?<GptSearch/>:
+      <><MainContainer/>
+      <SecondaryConatiner/></>}
+</div>
   )
 }
 

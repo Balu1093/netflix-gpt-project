@@ -10,6 +10,7 @@ const useMovieTrailer = (id) => {
         const json = await data.json();
         const filterData = json?.results.filter((x)=>x.type === "Trailer")
         const trailer = filterData.length?filterData[0]:json?.results[0];
+        if(!trailer) return;
         dispatch(addTrailerVideo(trailer))
     }
     useEffect(()=>{

@@ -1,4 +1,4 @@
-#Netflix Gpt project
+#playlix Gpt project
 
 -Create React App
 -Config Tailwind-CSS
