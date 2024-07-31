@@ -13,14 +13,11 @@ const SecondaryConatiner = () => {
 
   return(
   <div className='relative -mt-60'>
-        <MovieList title={"Trending Movies"} data={data[1]}/>
-        <MovieList title={"Top Rated Movies"} data={data[2]}/>
-        <MovieList title={"Now Playing Movies"} data={data[0]}/>
-        <TvList title={"Trending Tv series"} data={data1[0]}/>
-        <TvList title={"On The Air(Tv Series)"} data={data1[1]}/>
-        
-        
-        
+        <MovieList title={"Trending Movies"} data={data[1].results}/>
+        <MovieList title={"Top Rated Movies"} data={data[2].results}/>
+        <MovieList title={"Now Playing Movies"} data={data[0].results}/>
+        <TvList title={"Trending Tv series"} data={data1[0].results}/>
+        <TvList title={"On The Air(Tv Series)"} data={data1[1].results}/>
     </div>
 )
 

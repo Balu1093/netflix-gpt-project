@@ -22,7 +22,8 @@ const ShowInfo = ({test,setTest,props,data}) => {
     const userData = useSelector((state)=>state.user.email)
     if(!movieInfo) return; 
   
-
+    youtube?document.body.style.overflow ="hidden":document.body.style.overflow="auto";
+    
     const timeConvert=(x)=>{
     let num = x;
     let hours = Math.floor(num / 60);
@@ -54,7 +55,7 @@ const ShowInfo = ({test,setTest,props,data}) => {
 
   return (
     <div className='bg-[rgba(49,49,49,0.7)] fixed w-[100%] h-[100%] top-0 left-0 right-0 bottom-0 z-10 text-white'>
-        <div className='absolute w-[100%] sm:w-[90%] md:w-[80%] lg:w-[70%] 2xl:w-[60%] h-[900px] top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 py-4 px-4 min-h-[900px]'>
+        <div className='absolute h-lvh w-[100%] sm:w-[90%] md:w-[80%] lg:w-[70%] 2xl:w-[60%] 2xl:h-[900px] top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 py-4 px-4 min-h-[900px]'>
         <div className='relative bg-gradient-to-tl from-slate-600 to-slate-900 w-full h-full rounded-lg'>
         <img className='w-[100%] object-center h-full absolute mix-blend-luminosity opacity-40 rounded-lg' src={IMAGE_CDN_BIG+movieInfo.backdrop_path} alt="" />
         </div>
@@ -94,7 +95,7 @@ const ShowInfo = ({test,setTest,props,data}) => {
                 <div className='bg-red-500 rounded-lg'>
                   <button onClick={toggleYoutube} className='text-[22px] font-semibold py-2 px-3 flex items-center rounded-lg gap-1 h-14'><CiYoutube/> Watch Trailer</button>
                 </div>
-                {youtube && <YoutubeVideo  data={getVideo} youtube={youtube} toggle={setyoutube}/>}
+                {youtube && <YoutubeVideo  data={getVideo} youtube={youtube} setyoutube={setyoutube}/>}
                </div>
     
     

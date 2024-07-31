@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import { useDispatch } from 'react-redux'
 import { API_DATA } from '../utils/constants'
 import { addTvDetails } from '../utils/tvslice';
@@ -14,7 +14,7 @@ const useTvDetails = (id) => {
     useEffect(()=>{
         videoData()
     },[])
-
+   
 }
 
 export default useTvDetails;

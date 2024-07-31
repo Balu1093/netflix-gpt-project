@@ -10,6 +10,7 @@ const useMovieDetails = (id) => {
         const json = await data.json();
         if(!json) return;
         dispatch(addMovieDetails(json))
+        return json
     }
     useEffect(()=>{
         videoData()

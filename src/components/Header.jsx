@@ -88,7 +88,7 @@ const toggleFav=()=>{
         <header className={`fixed top-0 left-0 w-full h-[90px] z-10 transition duration-300 ease-in-out ${isScrolled === test? 'bg-gray-800' : ''}`}>
         <div className={user?'flex justify-between w-screen':'mt-0 sm:mt-0 lg:mt-5 2xl:mt-5 items-center'}>
           <div>
-          <img className='w-36 h-24 ml-3 sm:ml-8 md:ml-14 2xl:ml-20' src={playlix} alt="" />
+          <img className='w-24 h-20 md:w-36 md:h-24 ml-3 sm:ml-8 md:ml-14 2xl:ml-20' src={playlix} alt="" />
           </div>
           {user && <div className={`${isScrolled ? 'hidden lg:block 2xl:block':'hidden'} text-white`}>
           {!toggleGptName && <ul className='flex gap-8 lg:gap-4 lg:text-[12px] 2xl:text-[18px] 2xl:gap-10 items-center h-full'>
@@ -101,22 +101,28 @@ const toggleFav=()=>{
             </div>}
           {user && <div className='flex gap-2 items-center text-white lg:pr-2 2xl:pr-5 mr-5'>
             <div className='flex items-center gap-3'>
-            {toggleGptName ?<div className='mr-5'>
-              <select className='bg-[#5dbea3] rounded-lg px-5 py-2 outline-none cursor-pointer' onChange={toggleLanguage}>
+            {toggleGptName ?<div className='mr-5 ml-10'>
+              <select className='bg-[#5dbea3] rounded-lg px-4 py-2 outline-none cursor-pointer' onChange={toggleLanguage}>
               {CHANGE_LANG.map((lang)=><option className='text-white' value={lang.identifier}>{lang.name}</option>)}
               </select>
             </div>:
             <div>
-              <button onClick={toggleFav} className='bg-[#5dbea3] px-10 py-3 rounded-full font-medium'>My favourite</button>
+              <button onClick={toggleFav} className='bg-[#5dbea3] hidden sm:hidden md:block px-4 py-3 rounded-full font-medium'>My favourite</button>
             </div>}
             <div className='mr-10'>
-              <button onClick={toggleGpt} className='bg-[#5dbea3] px-7 py-3 rounded-full font-medium'>{toggleGptName?"HomePage":"Gemini AI"}</button>
+              <button onClick={toggleGpt} className='bg-[#5dbea3] hidden sm:hidden md:block px-4 py-3  rounded-full font-medium'>{toggleGptName?"HomePage":"Gemini AI"}</button>
             </div>
-          <h1 className='font-semibold text-2xl mr-5'>Hi {user.displayName}</h1>
+          <h1 className='font-semibold text-[16px] sm:text-[16px] md:text-[18px] lg:text-xl 2xl:text-2xl mr-5'>Hi {user.displayName}</h1>
           <div className='flex gap-2 items-center group relative'>
           <img className='w-10' src={profile_img} alt="" />
           <img className='w-3 h-3' src={arrow16} alt="" />
-          <div className='absolute hidden group-hover:block top-[100%] right-[-20%] w-max bg-white bg-opacity-35 py-[18px] px-[22px] z-10 rounded-full'><button className='font-semibold text-white cursor-pointer' onClick={signoutfn}>signOut</button></div>
+          <div className='absolute hidden group-hover:block top-[100%] right-[-20%] w-max bg-white bg-opacity-45 py-[5px] px-[10px] z-20 rounded-lg'>
+            <div className='bg-[#5dbea3] rounded-full px-2 py-1 my-2 text-center'><button className='font-semibold text-white cursor-pointer' onClick={signoutfn}>signOut</button></div>
+            <div className='block sm:block md:hidden bg-[#5dbea3] rounded-full px-2 py-1 my-2 text-center'><button className='font-semibold text-white cursor-pointer' onClick={toggleFav}>My favourite</button></div>
+            <div className='block sm:block md:hidden bg-[#5dbea3] rounded-full px-2 py-1 my-2 text-center'><button className='font-semibold text-white cursor-pointer' onClick={toggleGpt}>{toggleGptName?"HomePage":"Gemini AI"}</button></div>
+            <div>
+            </div>
+            </div>
           </div>
           </div> </div>}
          </div>

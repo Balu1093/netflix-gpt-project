@@ -22,6 +22,7 @@ const ShowInfoTv = ({test,setTest,props,data}) => {
     const userData = useSelector((state)=>state.user.email)
     if(!TvInfo) return;
 
+    youtube?document.body.style.overflow ="hidden":document.body.style.overflow="auto";
 
     const timeConvert=(x)=>{
     let num = x;
@@ -93,7 +94,7 @@ const ShowInfoTv = ({test,setTest,props,data}) => {
                 <div className='bg-red-500 rounded-lg'>
                   <button onClick={toggleYoutube} className='text-[22px] font-semibold py-2 px-3 flex items-center rounded-lg gap-1 h-14'><CiYoutube/> Watch Trailer</button>
                 </div>
-                {youtube && <YoutubeVideo  data={getVideo} youtube={youtube} toggle={setyoutube}/>}
+                {youtube && <YoutubeVideo  data={getVideo} youtube={youtube} setyoutube={setyoutube}/>}
                </div>
     
     

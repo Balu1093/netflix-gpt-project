@@ -6,7 +6,7 @@ import cinema from '../Assets/cinema.jpg'
 import cinema2 from '../Assets/cinema2.jpg'
 const GptSearch = () => {
   return (
-    <div className='w-full h-full'>
+    <div className='w-full h-full bg-black'>
       <div className='w-[100%] bg-black'>
         <img className='h-lvh w-lvw object-cover object-center opacity-80' src={cinema2} alt="" />
       </div>
