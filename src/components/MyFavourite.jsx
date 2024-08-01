@@ -43,9 +43,9 @@ const toggleFav=()=>{
         <div className='bg-[rgba(49,49,49,0.7)] fixed w-[100%] h-[100%] top-0 left-0 right-0 bottom-0 z-10 text-white'>
         <div className='absolute bg-black w-full h-full  top-[30%] left-[50%] -translate-x-1/2'>
             {/* <img src={BG_IMG} alt="" /> */}
-            <h1 className='text-3xl p-6 mx-16 mt-10 font-semibold'>My Favourite</h1>
+            <h1 className='text-xl md:text-2xl lg:text-3xl p-6 mx-5 mt-10 font-semibold'>My Favourite</h1>
         </div>
-        <div className="absolute flex gap-5 overflow-x-scroll scrollbar-hide z-10 items-end h-fit bottom-20 w-full" ref={cardRef} >
+        <div className="absolute flex px-5 gap-5 overflow-x-hidden scrollbar-hide z-10 items-end h-fit bottom-20 w-full" ref={cardRef} >
         {movies.length ?movies.map((data)=><FavouriteMovieCard data={data} />):<h1 className='text-xl flex w-full h-full justify-center mb-[10%]'>Kindly add your favourite movies to list here...</h1>}
         </div>
         <div>

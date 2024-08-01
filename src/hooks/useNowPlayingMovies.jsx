@@ -1,5 +1,5 @@
 import { API_DATA } from "../utils/constants";
-import { useDispatch} from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import {addNowPlayingMovies} from "../utils/movieSlice";
 import {useEffect, useState } from "react";
 
@@ -9,11 +9,12 @@ const useMoviesDataFetch=()=>{
     const[movieList,setMovieList]=useState(null)
     const [stats, setStats] = useState(null);
     const [info, setInfo] = useState(null);
-    const[tvSeries,setTvSeries]=useState(null)
     const dispatch = useDispatch()
 
+    const nowPlaying = useSelector((state)=>state.movies.NowPlayingMovies)
+
   const getMovieData=()=>{
-      Promise.all([
+     Promise.all([
         fetch('https://api.themoviedb.org/3/movie/now_playing?page=1',API_DATA),
         fetch('https://api.themoviedb.org/3/trending/movie/week?language=en-US',API_DATA),
       fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-IN&page=1',API_DATA)],)
@@ -37,7 +38,7 @@ useEffect(()=>{
   },[])
 
 
-  return [{movieList,stats,info}];
+  return [movieList,stats,info];
       
 } 
 

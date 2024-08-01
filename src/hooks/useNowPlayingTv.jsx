@@ -1,5 +1,5 @@
 import { API_DATA } from "../utils/constants";
-import { useDispatch} from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import {useEffect, useState } from "react";
 import { addNowPlayingTv } from "../utils/tvslice";
 
@@ -11,7 +11,7 @@ const useNowPlayingTv=()=>{
     // const [info, setInfo] = useState(null);
     // const[tvSeries,setTvSeries]=useState(null)
     const dispatch = useDispatch()
-
+    const nowPlaying = useSelector((state)=>state.tv.nowPlayingTv)
   const getTvData=()=>{
       Promise.all([
     fetch('https://api.themoviedb.org/3/trending/tv/day?language=en-US',API_DATA),
@@ -35,7 +35,7 @@ useEffect(()=>{
   },[])
 
 
-  return [{tvList,stats}];
+  return [tvList,stats];
       
 } 
 

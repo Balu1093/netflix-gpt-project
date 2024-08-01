@@ -64,7 +64,7 @@ const ShowInfo = ({test,setTest,props,data}) => {
              <img className='w-full h-full rounded-lg' src={IMAGE_CDN_BIG+movieInfo.poster_path} alt="" />
             </div>
             <div className='flex flex-col gap-2 ml-8 sm:ml-8 md:ml-10 lg:ml-12 2xl:ml-14 12/12 md:w-7/12 lg:w-7/12 2xl:w-7/12'>
-              <h1 className='text-xl 2xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl font-semibold'>{movieInfo.title}</h1>
+              <h1 className='text-[20px] 2xl:text-5xl lg:text-4xl md:text-3xl sm:text-xl font-semibold'>{movieInfo.title}</h1>
               <h3>{movieInfo.release_date} <span className='font-bold text-2xl'>.</span> {movieInfo.genres.map((x,index)=><span>{(index?', ':'')+ x.name}</span>)} <span className='font-bold text-2xl'>.</span> <span>{timeConvert(movieInfo.runtime)}</span></h3>
               <h3 className='text-white'></h3>
               <div className='flex gap-2 items-center'>

@@ -7,12 +7,11 @@ import { FaArrowRight } from "react-icons/fa";
 const MovieList = ({title,data}) => {
 const[test,setTest]=useState(true)
 const cardRef =useRef()
+
 const cartWheel=(e)=>{
 e.preventDefault();
 cardRef.current.scrollLeft += e.deltaY
 }
-const answer =data.filter((x,index)=>x.title ===title[index])
-console.log(answer)
 
 useEffect(()=>{
 cardRef.current.addEventListener("wheel",cartWheel) 

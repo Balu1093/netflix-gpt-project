@@ -1,16 +1,19 @@
 import VideoTitle from './VideoTitle'
 import VideoBackground from './VideoBackground'
 import useMoviesDataFetch from "../hooks/useNowPlayingMovies"
+import { useSelector } from 'react-redux'
+import useNowPlayingTv from '../hooks/useNowPlayingTv'
 
 const MainContainer = () => {
-const [{movieList}] = useMoviesDataFetch()
-if(!movieList) return;
+const movieData = useSelector((state)=>state.movies.NowPlayingMovies)
+const [movieDetails]=useMoviesDataFetch()
+if(!movieData) return;
+if(!movieDetails)return;
 
-const random = Math.floor(Math.random()*movieList[0]?.results?.length)
+const random = Math.floor(Math.random()*movieData[0]?.results?.length)
 
 
-
-const data =movieList[1]?.results[random]
+const data =movieData[1]?.results[random]
 const{title,overview,id}=data
 
 

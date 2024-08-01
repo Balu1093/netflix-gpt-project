@@ -5,10 +5,8 @@ import {createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile,
 import {auth,db} from "../utils/firebase"
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
-import {PHOTOURL } from '../utils/constants';
 import{doc,setDoc} from 'firebase/firestore'
 import cinema6 from '../Assets/cinema6.jpg'
-import cinema7 from '../Assets/cinema7.jpg'
 
 const Login = () => {
   const[isSignInForm,setIsSignInForm]=useState(true);
@@ -22,7 +20,6 @@ const Login = () => {
   const toggleSignInForm=()=>{
     setIsSignInForm(!isSignInForm);
   }
-  
   const handleButtonClick=()=>{
   const data =checkValdiation(email?.current?.value,password?.current?.value,name?.current?.value);
   setErrorMessage(data);
@@ -33,6 +30,7 @@ const Login = () => {
   .then((userCredential) => {
     const user = userCredential.user;
     // dispatch(addUser({email:email})); 
+    
     
     setDoc(doc(db,'users',email?.current?.value),{
       favShows:[],
@@ -112,12 +110,12 @@ const back=()=>{
     <div className='w-[100%]'>
       <Header/>
       <div className='absolute bg-black aspect-video'>
-        <img className='h-lvh w-lvw object-cover opacity-70' src={cinema6} alt="" />
+        <img className='h-screen w-lvw object-cover opacity-70' src={cinema6} alt="" />
       </div>
       {!forgotPwd ?<div className='flex h-lvh items-center flex-nowrap'>
-        <form action="" className='w-[500px] absolute p-8 z-20 right-0 left-0 mx-auto bg-[rgba(0,0,0,0.8)] text-white mt-14 sm:mt-14 md:mt-0 lg:mt-0 2xl:mt-0 'onSubmit={(e)=>e.preventDefault()}>
+        <form action="" className='w-full md:w-[500px] absolute p-8 z-20 right-0 left-0 mx-auto bg-[rgba(0,0,0,0.8)] text-white mt-14 sm:mt-14 md:mt-0 lg:mt-0 2xl:mt-0 'onSubmit={(e)=>e.preventDefault()}>
           <div className='ml-6'>
-          <h1 className='font-bold text-3xl p-5'>{isSignInForm?"Sign In":"Sign Up"}</h1>
+          <h1 className='font-bold text-2xl md:text-3xl p-2 md:p-5'>{isSignInForm?"Sign In":"Sign Up"}</h1>
           </div>
           <div className='flex flex-col items-center '>
           {!isSignInForm && <input ref={name} className='w-3/4 py-4 border border-gray-400 my-4 p-3 bg-[rgba(0,0,0,0.3)] rounded-md' type="text" placeholder='Full Name' name="text"/>}

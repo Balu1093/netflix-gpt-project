@@ -6,6 +6,7 @@ import useNowPlayingTv from '../hooks/useNowPlayingTv'
 
 const SecondaryConatiner = () => {
   useNowPlayingTv()
+  console.log("data")
   const data = useSelector((state)=>state.movies.NowPlayingMovies)
   const data1=useSelector((state)=>state.tv.nowPlayingTv)
   if(!data) return; 

@@ -117,7 +117,7 @@ const toggleFav=()=>{
           <img className='w-10' src={profile_img} alt="" />
           <img className='w-3 h-3' src={arrow16} alt="" />
           <div className='absolute hidden group-hover:block top-[100%] right-[-20%] w-max bg-white bg-opacity-45 py-[5px] px-[10px] z-20 rounded-lg'>
-            <div className='bg-[#5dbea3] rounded-full px-2 py-1 my-2 text-center'><button className='font-semibold text-white cursor-pointer' onClick={signoutfn}>signOut</button></div>
+            <div className='bg-[#5dbea3] rounded-full px-2 py-1 my-2 text-center'><button className='font-semibold text-white cursor-pointer'onClick={signoutfn} >signOut</button></div>
             <div className='block sm:block md:hidden bg-[#5dbea3] rounded-full px-2 py-1 my-2 text-center'><button className='font-semibold text-white cursor-pointer' onClick={toggleFav}>My favourite</button></div>
             <div className='block sm:block md:hidden bg-[#5dbea3] rounded-full px-2 py-1 my-2 text-center'><button className='font-semibold text-white cursor-pointer' onClick={toggleGpt}>{toggleGptName?"HomePage":"Gemini AI"}</button></div>
             <div>

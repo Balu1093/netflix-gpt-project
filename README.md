@@ -1,4 +1,4 @@
-#playlix Gpt project
+#playlix project
 
 -Create React App
 -Config Tailwind-CSS

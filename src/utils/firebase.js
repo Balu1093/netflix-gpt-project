@@ -5,12 +5,12 @@ import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
-  authDomain: "playlix-79d5c.firebaseapp.com",
-  projectId: "playlix-79d5c",
-  storageBucket: "playlix-79d5c.appspot.com",
-  messagingSenderId: "884958857270",
-  appId: "1:884958857270:web:9b6ede74262b9c742cf097",
-  measurementId: "G-JCEXL5XTR2"
+  authDomain: "playlix-4e3f7.firebaseapp.com",
+  projectId: "playlix-4e3f7",
+  storageBucket: "playlix-4e3f7.appspot.com",
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MSG_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
