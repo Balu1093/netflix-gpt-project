@@ -4,6 +4,7 @@ import MainContainer from "./MainContainer"
 import SecondaryConatiner from "./SecondaryConatiner"
 import GptSearch from './GptSearch'
 import { useSelector } from 'react-redux'
+import Footer from './Footer'
 
 
 
@@ -15,6 +16,7 @@ return (
     <div className='w-screen h-[100%] p-0 m-0 box-border bg-black'>
      <Header/>
       {accessGpt?<GptSearch/>:<><MainContainer /><SecondaryConatiner /></>}
+     <Footer/>
 </div>
   )
 }

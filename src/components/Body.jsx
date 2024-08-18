@@ -18,7 +18,7 @@ const Body = () => {
   ]);
 
 return (
-    <div className="w-[100%] h-[100%] overflow-x-hidden">
+    <div className="w-[100%] h-[100%] overflow-x-hidden scroll-smooth">
     <RouterProvider router={appLayout}/>
     </div>
 )}

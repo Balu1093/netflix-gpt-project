@@ -3,10 +3,12 @@ import Header from './Header'
 import checkValdiation from '../utils/Valdiation';
 import {createUserWithEmailAndPassword,signInWithEmailAndPassword,updateProfile,sendPasswordResetEmail} from "firebase/auth";
 import {auth,db} from "../utils/firebase"
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../utils/userSlice';
 import{doc,setDoc} from 'firebase/firestore'
-import cinema6 from '../Assets/cinema6.jpg'
+import cinema6 from '../Assets/cinema6.jpg';
+import spinner from '../Assets/spinner.gif'
+
 
 const Login = () => {
   const[isSignInForm,setIsSignInForm]=useState(true);
@@ -29,9 +31,6 @@ const Login = () => {
     createUserWithEmailAndPassword(auth, email?.current?.value,password?.current?.value)
   .then((userCredential) => {
     const user = userCredential.user;
-    // dispatch(addUser({email:email})); 
-    
-    
     setDoc(doc(db,'users',email?.current?.value),{
       favShows:[],
     })
@@ -40,7 +39,6 @@ const Login = () => {
     }).then(() => {
       const{displayName,photoURL,email,uid}=auth.currentUser;
       dispatch(addUser({email:email,uid:uid,displayName:displayName}))
-      
     }).catch((error) => {
       setErrorMessage(error.message)
     });
@@ -107,13 +105,14 @@ const back=()=>{
 }
 
  return (
+  // config?<div><img src={spinner} alt="" /></div>:
     <div className='w-[100%]'>
       <Header/>
       <div className='absolute bg-black aspect-video'>
         <img className='h-screen w-lvw object-cover opacity-70' src={cinema6} alt="" />
       </div>
       {!forgotPwd ?<div className='flex h-lvh items-center flex-nowrap'>
-        <form action="" className='w-full md:w-[500px] absolute p-8 z-20 right-0 left-0 mx-auto bg-[rgba(0,0,0,0.8)] text-white mt-14 sm:mt-14 md:mt-0 lg:mt-0 2xl:mt-0 'onSubmit={(e)=>e.preventDefault()}>
+        <form action="" className='fixed h-[80%] w-full md:w-[500px] p-8 z-20 right-0 left-0 mx-auto bg-[rgba(0,0,0,0.8)] text-white mb-18 sm:mb-18 md:mb-0'onSubmit={(e)=>e.preventDefault()}>
           <div className='ml-6'>
           <h1 className='font-bold text-2xl md:text-3xl p-2 md:p-5'>{isSignInForm?"Sign In":"Sign Up"}</h1>
           </div>
@@ -139,8 +138,8 @@ const back=()=>{
           </div>
           </div>
           </form>
-          </div>:<form className='w-[500px] mt-52 absolute p-8 z-20 right-0 left-0 mx-auto bg-[rgba(0,0,0,0.8)] text-white'onSubmit={(e)=>e.preventDefault()}>
-            <div className='flex flex-col h-80 justify-center items-center'> <div className='w-3/4'>
+          </div>:<form className='absolute w-[500px] mt-52 p-8 z-20 right-0 left-0 mx-auto bg-[rgba(0,0,0,0.8)] text-white'onSubmit={(e)=>e.preventDefault()}>
+            <div className='flex flex-col h-80 justify-center md:items-center'><div className='w-3/4'>
             <h1 className='font-bold text-3xl mb-5'>Password Reset</h1>
               <input className='w-full py-4 border border-gray-400 my-4 p-3 bg-[rgba(0,0,0,0.3)] rounded-md' type="text" placeholder="Email Address" name="text" value={forgotText} onChange={(e)=>setForgotText(e.target.value)}/>
               <p className='w-3/4 text-red-600'>{errorMessage}</p>
@@ -149,7 +148,6 @@ const back=()=>{
              <button type='submit'className='w-2/4 bg-red-600 py-3 my-4 font-semibold rounded-md cursor-pointer hover:bg-red-700' onClick={forgot}>Submit</button>
               <button onClick={back} className='w-2/4 bg-red-600 py-3 my-4 font-semibold rounded-md cursor-pointer hover:bg-red-700' >back</button>
             </div>
-            
             </div>
             </form>}
     </div>

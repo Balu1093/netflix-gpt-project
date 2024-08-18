@@ -1,6 +1,8 @@
 import Body from "./components/Body"
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (

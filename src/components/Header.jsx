@@ -1,10 +1,10 @@
-import React, { useEffect,useRef,useState } from 'react'
+import React, { useEffect,useState } from 'react'
 import {onAuthStateChanged, signOut } from "firebase/auth";
 import {useNavigate } from 'react-router-dom';
 import {auth} from "../utils/firebase"
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser,removeUser } from '../utils/userSlice';
-import { LOGO,CHANGE_LANG } from '../utils/constants';
+import {CHANGE_LANG } from '../utils/constants';
 import profile_img from "../Assets/profile_img.png"
 import arrow16 from "../Assets/arrow16.png"
 import {toggleGptView} from "../utils/gptSlicer"
@@ -85,12 +85,12 @@ const toggleFav=()=>{
   return (
       <div>
         {fav?<MyFavourite fav={fav} setFav={setFav}/>:
-        <header className={`fixed top-0 left-0 w-full h-[90px] z-10 transition duration-300 ease-in-out ${isScrolled === test? 'bg-gray-800' : ''}`}>
+        <header className={`fixed top-0 left-0 w-full h-[80px] md:h-[90px] z-10 transition duration-300 ease-in-out ${isScrolled === test? 'bg-gray-800' : ''}`}>
         <div className={user?'flex justify-between w-screen':'mt-0 sm:mt-0 lg:mt-5 2xl:mt-5 items-center'}>
           <div>
           <img className='w-24 h-20 md:w-36 md:h-24 ml-3 sm:ml-8 md:ml-14 2xl:ml-20' src={playlix} alt="" />
           </div>
-          {user && <div className={`${isScrolled ? 'hidden lg:block 2xl:block':'hidden'} text-white`}>
+          {user && <div className={`${isScrolled ?'hidden lg:block 2xl:block':'hidden'} text-white`}>
           {!toggleGptName && <ul className='flex gap-8 lg:gap-4 lg:text-[12px] 2xl:text-[18px] 2xl:gap-10 items-center h-full'>
               <li className='cursor-pointer'>Home</li>
               <li className='cursor-pointer'>New Movies</li>
@@ -100,21 +100,21 @@ const toggleFav=()=>{
             </ul>}
             </div>}
           {user && <div className='flex gap-2 items-center text-white lg:pr-2 2xl:pr-5 mr-5'>
-            <div className='flex items-center gap-3'>
-            {toggleGptName ?<div className='mr-5 ml-10'>
-              <select className='bg-[#5dbea3] rounded-lg px-4 py-2 outline-none cursor-pointer' onChange={toggleLanguage}>
+            <div className='flex items-center gap-0'>
+            {toggleGptName ?<div className='mr-0 ml-0 md:mr-5 md:ml-5'>
+              <select className='bg-[#5dbea3] rounded-lg ml-10 md:ml-0 px-1 md:px-4 py-2 outline-none cursor-pointer' onChange={toggleLanguage}>
               {CHANGE_LANG.map((lang)=><option className='text-white' value={lang.identifier}>{lang.name}</option>)}
               </select>
             </div>:
-            <div>
+            <div className='mr-5'>
               <button onClick={toggleFav} className='bg-[#5dbea3] hidden sm:hidden md:block px-4 py-3 rounded-full font-medium'>My favourite</button>
             </div>}
             <div className='mr-10'>
               <button onClick={toggleGpt} className='bg-[#5dbea3] hidden sm:hidden md:block px-4 py-3  rounded-full font-medium'>{toggleGptName?"HomePage":"Gemini AI"}</button>
             </div>
-          <h1 className='font-semibold text-[16px] sm:text-[16px] md:text-[18px] lg:text-xl 2xl:text-2xl mr-5'>Hi {user.displayName}</h1>
-          <div className='flex gap-2 items-center group relative'>
-          <img className='w-10' src={profile_img} alt="" />
+          <h1 className='font-semibold text-[14px] sm:text-[14px] md:text-[16px] lg:text-xl 2xl:text-2xl mr-5'>Hi {user.displayName}</h1>
+          <div className={`flex gap-1 md:gap-2 ${toggleGptName?'mr-3':'mr-0'} md:mr-0 items-center group relative`}>
+          <img className='w-10 rounded-full' src={profile_img} alt="" />
           <img className='w-3 h-3' src={arrow16} alt="" />
           <div className='absolute hidden group-hover:block top-[100%] right-[-20%] w-max bg-white bg-opacity-45 py-[5px] px-[10px] z-20 rounded-lg'>
             <div className='bg-[#5dbea3] rounded-full px-2 py-1 my-2 text-center'><button className='font-semibold text-white cursor-pointer'onClick={signoutfn} >signOut</button></div>

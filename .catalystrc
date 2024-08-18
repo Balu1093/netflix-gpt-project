@@ -1,0 +1,30 @@
+{
+  "defaults": {
+    "project": 1,
+    "env": 1
+  },
+  "actives": {
+    "project": 1,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "9123000000006075",
+      "name": "playlix",
+      "domain": {
+        "id": "50021643869",
+        "name": "playlix-60031469825.development"
+      },
+      "timezone": "Asia/Kolkata",
+      "env": [
+        {
+          "idx": 1,
+          "id": "60031469825",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    }
+  ]
+}

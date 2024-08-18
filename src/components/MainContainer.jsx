@@ -2,7 +2,6 @@ import VideoTitle from './VideoTitle'
 import VideoBackground from './VideoBackground'
 import useMoviesDataFetch from "../hooks/useNowPlayingMovies"
 import { useSelector } from 'react-redux'
-import useNowPlayingTv from '../hooks/useNowPlayingTv'
 
 const MainContainer = () => {
 const movieData = useSelector((state)=>state.movies.NowPlayingMovies)

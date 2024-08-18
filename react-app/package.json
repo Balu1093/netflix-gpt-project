@@ -1,25 +1,16 @@
 {
-  "name": "playlix",
+  "name": "react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@google/generative-ai": "^0.16.0",
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "classnames": "^2.5.1",
-    "firebase": "^10.12.4",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
     "react": "^18.3.1",
-    "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.3.1",
-    "react-icons": "^5.2.1",
-    "react-player": "^2.16.0",
-    "react-redux": "^9.1.2",
     "react-scripts": "5.0.1",
-    "react-toastify": "^10.0.5",
-    "tailwind-scrollbar-hide": "^1.1.7",
-    "uninstall": "^0.0.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^1.1.2",
+    "zcatalyst-cli-plugin-react": "^0.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,10 +35,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@reduxjs/toolkit": "^2.2.6",
-    "react-router-dom": "^6.24.1",
-    "tailwindcss": "^3.4.4"
   }
 }

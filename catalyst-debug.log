@@ -1,0 +1,41 @@
+[debug] [2024-08-01T15:12:44.872Z] : 
+[debug] [2024-08-01T15:12:44.874Z] : ----------------------------------------------------------------------
+[debug] [2024-08-01T15:12:44.874Z] : Command:      C:\Program Files\nodejs\node.exe C:\Users\Balu\AppData\Roaming\npm\node_modules\zcatalyst-cli\lib\bin\catalyst.js serve
+[debug] [2024-08-01T15:12:44.874Z] : CLI Version:  1.17.6
+[debug] [2024-08-01T15:12:44.875Z] : Platform:     win32
+[debug] [2024-08-01T15:12:44.875Z] : Node Version: v20.13.1
+[debug] [2024-08-01T15:12:44.875Z] : Time:         Thu Aug 01 2024 20:42:44 GMT+0530 (India Standard Time)
+[debug] [2024-08-01T15:12:44.875Z] : ----------------------------------------------------------------------
+[debug] [2024-08-01T15:12:44.876Z] : 
+[debug] [2024-08-01T15:12:45.607Z] : > authorizing via signed-in user option
+[debug] [2024-08-01T15:12:45.607Z] : > command requires scopes: ["ZohoCatalyst.projects.ALL","ZohoCatalyst.functions.ALL","ZohoCatalyst.functions.EXECUTE","ZohoCatalyst.webapp.ALL","ZohoCatalyst.pdfshot.execute","ZohoCatalyst.authentication.CREATE"]
+[debug] [2024-08-01T15:12:45.618Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/9123000000006075 
+
+[debug] [2024-08-01T15:12:45.778Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 01 Aug 2024 15:12:45 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=99131cfabfda186b4fe68a16fb8fedd6; Path=/","ZD_CSRF_TOKEN=373825aa-449c-4af7-bb1a-3f7971e090de;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=373825aa-449c-4af7-bb1a-3f7971e090de;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-08-01T15:12:45.782Z] : >>>> HTTP REQUEST : GET https://api.catalyst.zoho.in/baas/v1/project/9123000000006075/environment 
+
+[debug] [2024-08-01T15:12:45.823Z] : <<<< HTTP RESPONSE : 200
+Response Headers: {"server":"ZGS","date":"Thu, 01 Aug 2024 15:12:45 GMT","content-type":"application/vnd.catalyst.v2+json","transfer-encoding":"chunked","connection":"keep-alive","set-cookie":["zalb_3a750b85f1=7c58023b2365c117e2ff9b6feb09efa2; Path=/","ZD_CSRF_TOKEN=e980cdab-83a9-4926-a246-fe57b9c681dd;path=/;SameSite=None;Secure;priority=high","_zcsr_tmp=e980cdab-83a9-4926-a246-fe57b9c681dd;path=/;SameSite=Strict;Secure;priority=high"],"x-content-type-options":"nosniff","x-xss-protection":"1","cache-control":"private,no-cache,no-store,max-age=0,must-revalidate","pragma":"no-cache","expires":"Thu, 01 Jan 1970 00:00:00 GMT","x-frame-options":"DENY","strict-transport-security":"max-age=63072000"}
+
+[debug] [2024-08-01T15:12:47.373Z] : No basic functions to add
+[info] [2024-08-01T15:13:15.527Z] : [react-plugin]: Starting the development server...
+
+[info] [2024-08-01T15:13:15.528Z] : 
+[info] [2024-08-01T15:13:15.528Z] : i Client[react-app]: Plugin : "zcatalyst-cli-plugin-react" is used for client serve
+[info] [2024-08-01T15:13:15.528Z] : 
+[info] [2024-08-01T15:13:29.327Z] : 
+[info] [2024-08-01T15:13:29.327Z] :  >>>>>>>>>>>>> Web Client <<<<<<<<<<<<
+[info] [2024-08-01T15:13:29.327Z] : i client[react-app]: http://localhost:3000/app/
+[info] [2024-08-01T15:13:29.328Z] : 
+[info] [2024-08-01T15:14:03.530Z] : [react-plugin]: Compiled successfully!
+[info] [2024-08-01T15:14:03.530Z] : [react-plugin]: 
+[info] [2024-08-01T15:14:03.530Z] : [react-plugin]: You can now view react-app in the browser.
+[info] [2024-08-01T15:14:03.530Z] : [react-plugin]: 
+[info] [2024-08-01T15:14:03.531Z] : [react-plugin]:   Local:            http://localhost:3000/app/
+[info] [2024-08-01T15:14:03.531Z] : [react-plugin]:   On Your Network:  http://192.168.0.104:3000/app/
+[info] [2024-08-01T15:14:03.531Z] : [react-plugin]: 
+[info] [2024-08-01T15:14:03.531Z] : [react-plugin]: Note that the development build is not optimized.
+[info] [2024-08-01T15:14:03.531Z] : [react-plugin]: To create a production build, use npm run build.
+[info] [2024-08-01T15:14:03.531Z] : [react-plugin]: 

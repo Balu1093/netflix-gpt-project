@@ -22,9 +22,9 @@ cardRef.current.addEventListener("wheel",cartWheel)
 //   slider.scrollLeft +=e;
 // }
 return (
-  <div className='px-0 py-2 lg:px-5 lg:py-10 w-[80%] lg:w-[90%] mx-auto'>
-    <h1 className='text-white text-xl md:text-2xl lg:text-3xl font-bold my-4 lg:my-8'>{title}</h1>
-    <div className="flex gap-2 md:gap-3 lg:gap-5 overflow-x-hidden scrollbar-hide" ref={cardRef}>
+  <div className='px-5 py-2 lg:py-10 w-[100%] lg:w-[90%] mx-auto'>
+    <h1 className='text-white text-[18px] md:text-2xl lg:text-3xl font-bold my-4 lg:my-8'>{title}</h1>
+    <div className="flex gap-2 md:gap-3 lg:gap-5 overflow-x-scroll scrollbar-hide" ref={cardRef}>
     {data.map((info)=><TvCard test={test} setTest={setTest} data={info}/>)}
     </div>
 </div>

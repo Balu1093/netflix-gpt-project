@@ -7,8 +7,8 @@ const GptMovieSuggestion = () => {
   if(!movieName) return;
  document.body.style.overflow ="auto"
   return (
-    <div className='absolute w-[100%] rounded-l-lg rounded-r-lg flex items-center bg-black'>
-  {movieName &&<div className=' bg-black bg-opacity-40 overflow-y-hidden -mt-[600px]'> 
+    <div className='absolute w-[100%] mx-auto flex bg-black'>
+  {movieName &&<div className=' bg-black bg-opacity-40 overflow-y-hidden -mt-[500px] md:-mt-[600px]'> 
        {movieName.map((title,index)=>(<MovieList title={title} data={movieResults[index]}/>))}
       </div>}
     </div>

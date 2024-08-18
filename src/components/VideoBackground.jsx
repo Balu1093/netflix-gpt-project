@@ -11,7 +11,7 @@ const VideoBackground = ({id}) => {
     if(!TrailerId) return;
     
     return (
-      <div className="w-screen h-screen aspect-video bg-black">
+      <div className="w-screen h-screen aspect-video bg-black -mt-52 md:mt-0">
       <iframe className='w-screen h-screen' src={"https://www.youtube.com/embed/"+TrailerId?.key+"?rel=0&autoplay=1&mute=1&autohide=1&showinfo=0&controls=0"} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin"allowFullScreen></iframe>
     </div>
   )
